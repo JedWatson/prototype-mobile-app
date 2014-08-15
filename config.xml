@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.jedwatson" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="0.5f" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <name>Prototype App</name>
+    <description></description>
+    <author email="jed@thinkmill.com.au" href="http://thinkmill.com.au">
+        Jed Watson
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

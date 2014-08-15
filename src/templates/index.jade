@@ -1,0 +1,85 @@
+doctype html
+html
+	head
+		//- charset
+		meta(charset='utf-8')
+		
+		//- title
+		title Prototype App
+		
+		//- stylesheet
+		link(href='/css/app.css', rel='stylesheet')
+	
+	body
+		//- viewport
+		#viewport
+			#app-loading: .box
+				.spinner
+				.label
+			
+			include views/home
+			include views/about
+			include views/setup
+		
+		//- component scripts
+		script(src='js/packages/jquery.js')
+		script(src='js/packages/velocity.js')
+		script(src='js/packages/underscore.js')
+		script(src='js/packages/backbone.js')
+		script(src='js/packages/async.js')
+		script(src='js/packages/moment.js')
+		script.
+			moment.lang('en', { relativeTime: { future: 'in %s', past: '%s ago', s: 'seconds', m: '1 minute', mm: '%d minutes', h: '1 hour', hh: '%d hours', d: '1 day', dd: '%d days', M: '1 month', MM: '%d months', y: '1 year', yy: '%d years' } });
+		
+		//- cordova script
+		//- script(src='cordova.js')
+		
+		//- init config
+		script.
+			var config = {
+					baseURL: 'http://www.keystonejs.com'
+				};
+		
+		//- ui scripts
+		script(src='js/lib/ui/button.js')
+		script(src='js/lib/ui/spinner.js')
+		script(src='js/lib/ui/touch.js')
+		
+		//- framework classes
+		script(src='js/lib/framework/app.js')
+		script(src='js/lib/framework/view.js')
+		
+		//- views
+		script(src='js/views/home.js')
+		script(src='js/views/about.js')
+		script(src='js/views/setup.js')
+		
+		//- index script
+		script(src='js/index.js')
+		
+		//- app init
+		script.
+			$(function() {
+				// console.log( '[root] - App running locally...' );
+				app._local = true;
+				if (!/(iphone)|(ipad)|(android)/i.test(navigator.userAgent) ) {
+					// console.log( '[root] - Detected non-mobile device, initalising app...' );
+					app.init();
+				} else {
+					console.log( '[root] - Detected mobile device, setting device ready event...' );
+					$(document).on('deviceready', function() {
+						navigator.splashscreen && navigator.splashscreen.hide && navigator.splashscreen.hide();
+						// console.log( '[root] - Mobile device is ready...' );
+						// console.log( '[root] - Triggering app init.' );
+						app.init();
+					});
+				}
+			});
+		
+		//- google analytics (initalised when app loads, due to dynamic client id)
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+			
