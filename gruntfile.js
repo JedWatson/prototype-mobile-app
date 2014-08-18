@@ -55,6 +55,9 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+		browserify: {
+			'build/js/app.js': ['src/js/app.js']
+		},
 		uglify: {
 			core: {
 				options: {
@@ -137,6 +140,7 @@ module.exports = function(grunt) {
 	});
 	
 	// Load modules to run
+	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
