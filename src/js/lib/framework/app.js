@@ -1,3 +1,12 @@
+var $ = require('jquery'),
+	_ = require('underscore'),
+	Backbone = require('backbone');
+
+// Initialise UI Classes
+require('../ui/button');
+require('../ui/spinner');
+require('../ui/touch');
+
 // App
 // -------------
 
