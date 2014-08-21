@@ -415,4 +415,7 @@ _.extend(App.prototype, Backbone.Events, {
 	
 });
 
-app = new App();
+var app = new App();
+app.App = App;
+
+module.exports = app;

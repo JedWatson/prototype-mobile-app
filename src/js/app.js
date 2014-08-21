@@ -1,6 +1,10 @@
-var moment = require('moment');
+var $ = require('jquery'),
+	moment = require('moment'),
+	app = require('./lib/framework/app');
 
-moment.lang('en', {
+// Config Moment
+
+moment.locale('en', {
 	relativeTime: {
 		future: 'in %s',
 		past: '%s ago',
@@ -18,5 +22,23 @@ moment.lang('en', {
 	}
 });
 
-var App = require('./lib/framework/app');
+app.on('init', function() {
+	app.view('home').show();
+});
 
+$(function() {
+	// console.log( '[root] - App running locally...' );
+	app._local = true;
+	if (!/(iphone)|(ipad)|(android)/i.test(navigator.userAgent) ) {
+		// console.log( '[root] - Detected non-mobile device, initalising app...' );
+		app.init();
+	} else {
+		console.log( '[root] - Detected mobile device, setting device ready event...' );
+		$(document).on('deviceready', function() {
+			navigator.splashscreen && navigator.splashscreen.hide && navigator.splashscreen.hide();
+			// console.log( '[root] - Mobile device is ready...' );
+			// console.log( '[root] - Triggering app init.' );
+			app.init();
+		});
+	}
+});
