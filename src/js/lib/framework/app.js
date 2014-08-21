@@ -1,5 +1,6 @@
 var $ = require('jquery'),
 	_ = require('underscore'),
+	velocity = require('velocity-animate'),
 	Backbone = require('backbone');
 
 // Initialise UI Classes
