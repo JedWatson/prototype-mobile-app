@@ -22,6 +22,12 @@ moment.locale('en', {
 	}
 });
 
+// Initialise App
+
+require('./views/about');
+require('./views/home');
+require('./views/setup');
+
 app.on('init', function() {
 	app.view('home').show();
 });

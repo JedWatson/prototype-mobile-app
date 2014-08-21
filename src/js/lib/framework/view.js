@@ -2,6 +2,8 @@ var $ = require('jquery'),
 	_ = require('underscore'),
 	Backbone = require('backbone');
 
+var app = require('./app');
+
 // View
 // -------------
 
@@ -15,8 +17,6 @@ var $ = require('jquery'),
 // *	`hidden` - after the view becomes hidden
 
 var View;
-
-(function() {
 
 // Cached regex to split keys for `delegate`. **MUST** be the same as Backbone's.
 var delegateEventSplitter = /^(\S+)\s*(.*)$/;
@@ -474,4 +474,4 @@ _.extend(View.prototype, Backbone.Events, {
 	
 });
 
-})();
+module.exports = View;

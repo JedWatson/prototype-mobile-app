@@ -1,4 +1,5 @@
-;(function() {
+var app = require('../lib/framework/app'),
+	View = require('../lib/framework/view');
 
 new View('home', {
 	
@@ -50,5 +51,3 @@ new View('home', {
 	}
 	
 });
-
-})();
