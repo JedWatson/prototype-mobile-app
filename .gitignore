@@ -13,13 +13,34 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Build folder
+# Common
+.DS_Store
 build
 
-# Dependency directory
-# Deployed apps should consider commenting this line out:
-# see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
+# Node.js
 node_modules
+
+# Xcode	
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+*.hmap
+*.ipa
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.perspectivev3
+xcuserdata
+DerivedData
+
+# Android
+build.xml
+local.properties
+gradlew
+gradlew.bat
+gradle
+ant-build
+ant-gen
+gen
+out
